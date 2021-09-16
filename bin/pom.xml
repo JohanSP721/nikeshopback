@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>co.edu.unbosque</groupId>
-	<artifactId>nikeshopnack</artifactId>
+	<artifactId>nikeshopback</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>nikeshop</name>
 	<description>Demo proyecto ciclo3</description>
