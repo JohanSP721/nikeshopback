@@ -1,4 +1,4 @@
-package co.edu.unbosque.nikeshop;
+package co.edu.unbosque.nikeshopback;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

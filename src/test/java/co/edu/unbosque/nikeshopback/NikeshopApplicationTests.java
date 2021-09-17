@@ -1,4 +1,4 @@
-package co.edu.unbosque.nikeshop;
+package co.edu.unbosque.nikeshopback;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
