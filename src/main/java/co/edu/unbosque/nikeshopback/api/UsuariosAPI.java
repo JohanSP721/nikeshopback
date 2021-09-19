@@ -33,12 +33,19 @@ public class UsuariosAPI
 	}
 	
 	@DeleteMapping("/eliminar/{id}")
-	public void eliminar(@PathVariable("id") Integer id) {
+	public void eliminar(@PathVariable("id") Long id) {
 		usuariosDAO.deleteById(id);
 	}
 	
-	@PutMapping("/actualizar")
-	public void actualizar(@RequestBody Usuarios usuarios) {
-		usuariosDAO.save(usuarios);
+	@PutMapping("/actualizar/{id}")
+	public void actualizar(@PathVariable("id") Long id, @RequestBody Usuarios usuarios) {
+		Usuarios user = usuariosDAO.getById(id);
+		
+		user.setEmail_usuario(usuarios.getEmail_usuario());
+		user.setNombre_usuario(usuarios.getNombre_usuario());
+		user.setUsuario(usuarios.getUsuario());
+		user.setPassword(usuarios.getPassword());
+		
+		usuariosDAO.save(user);
 	}
 }

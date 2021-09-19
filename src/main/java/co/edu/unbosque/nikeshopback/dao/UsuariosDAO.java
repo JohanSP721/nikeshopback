@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import co.edu.unbosque.nikeshopback.model.Usuarios;
 
-public interface UsuariosDAO extends JpaRepository<Usuarios, Integer>
+public interface UsuariosDAO extends JpaRepository<Usuarios, Long>
 {
 	
 }
