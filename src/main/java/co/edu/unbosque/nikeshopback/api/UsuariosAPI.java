@@ -1,5 +1,6 @@
 package co.edu.unbosque.nikeshopback.api;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class UsuariosAPI
 	
 	@ResponseStatus(
 		    value = HttpStatus.CONFLICT, 
-		    reason = "La cedula de usuario ya esta registrada"
+		    reason = "La cedula de usuario no esta registrada"
 		)
 		public class UserNotFoundException 
 		        extends RuntimeException {
@@ -69,8 +70,13 @@ public class UsuariosAPI
 	}
 	
 	@GetMapping("/listar/{id}")
-	public Optional<Usuarios> listar(@PathVariable("id") Long id){
+	public Optional<Usuarios> listarPorId(@PathVariable("id") Long id){
 		return usuariosDAO.findById(id);
+	}
+	
+	@GetMapping("/listar")
+	public List<Usuarios> listar(){
+		return usuariosDAO.findAll();
 	}
 	
 	@DeleteMapping("/eliminar/{id}")
