@@ -88,10 +88,10 @@ public class UsuariosAPI
 	public void actualizar(@PathVariable("id") Long id, @RequestBody Usuarios usuario) {
 		Usuarios user = usuariosDAO.getById(id);
 		
-		user.setEmail_usuario(usuario.getEmail_usuario());
-		user.setNombre_usuario(usuario.getNombre_usuario());
-		user.setUsuario(usuario.getUsuario());
-		user.setPassword(usuario.getPassword());
+		user.setEmail_usuario(usuario.getEmail_usuario() != "" ? usuario.getEmail_usuario() : user.getEmail_usuario());
+		user.setNombre_usuario(usuario.getNombre_usuario() != "" ? usuario.getNombre_usuario() : user.getNombre_usuario());
+		user.setUsuario(usuario.getUsuario() != "" ? usuario.getUsuario() : user.getUsuario());
+		user.setPassword(usuario.getPassword() != "" ? usuario.getPassword() : user.getPassword());
 		
 		usuariosDAO.save(user);
 	}
